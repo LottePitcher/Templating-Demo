@@ -1,0 +1,10 @@
+﻿{
+    "dashboards":  [
+        {
+            "alias": "welcomeDashboard",
+            "view":  "/App_Plugins/WelcomeDashboard/WelcomeDashboard.html",
+            "sections":  [ "content" ],
+            "weight": 1
+        }
+    ]
+}

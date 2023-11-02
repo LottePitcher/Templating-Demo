@@ -1,0 +1,24 @@
+// FONT FACES (web fonts defined in site.sass)
+$base-fontfamily-default:  'open_sansregular', arial, sans-serif;
+$base-fontfamily-headings: 'open_sansregular', arial, sans-serif;
+
+// SITE-WIDE COLOURS (change to appropriate names / add as required)
+$base-colour-grey: #CCC;
+$base-colour-silver: #EEE;
+$base-colour-text: #222;	
+$base-colour-link: blue;
+$base-colour-link-hover: lighten($base-colour-link,25%);
+
+// FONT SIZES
+$font-size-default: 13px;
+$font-size-h1: 32px;
+$font-size-h2: 24px;
+
+// FUNCTIONS / MIXINS
+@mixin font-size($sizePx) {
+    font-size: $sizePx;
+    font-size: ($sizePx / 10px) * 1rem;
+}
+@function rem($sizePx) {
+    @return ($sizePx / 10px) * 1rem;
+}

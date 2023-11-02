@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34112.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeStarter", "AcmeStarter\AcmeStarter.csproj", "{8313F685-1A4C-4D3E-AB55-FA7B7FD0A91D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{D43756F2-DA47-4FC8-A882-1E0E7600EC06}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		Commands.txt = Commands.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8313F685-1A4C-4D3E-AB55-FA7B7FD0A91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8313F685-1A4C-4D3E-AB55-FA7B7FD0A91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8313F685-1A4C-4D3E-AB55-FA7B7FD0A91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8313F685-1A4C-4D3E-AB55-FA7B7FD0A91D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17EC7DDB-6DBA-4359-B82A-999E591A9DDA}
+	EndGlobalSection
+EndGlobal

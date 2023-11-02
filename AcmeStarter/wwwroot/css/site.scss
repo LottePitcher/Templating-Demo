@@ -1,0 +1,41 @@
+@import "includes";
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fonts/OpenSans-Regular/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: $base-fontfamily-default;
+	@include font-size($font-size-default);		
+    color: $base-colour-text;
+}
+
+h1 {
+    font-family: $base-fontfamily-headings;
+    @include font-size($font-size-h1);
+    line-height: rem($font-size-h1 * 1.1);
+	font-weight: normal;
+}
+
+h2 {
+    font-family: $base-fontfamily-headings;
+    @include font-size($font-size-h2);	
+    line-height: rem($font-size-h2 * 1.2);
+    font-weight: normal;
+}
+
+a { 
+	color: $base-colour-link; 
+	text-decoration: underline;
+}
+a:hover { 
+	color: $base-colour-link-hover;
+	text-decoration: none;
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Acme Inc.",
+  "classifications": [ "Web", "CMS", "Umbraco" ],
+  "name": "Acme Umbraco Starter",
+  "description": "A project template for creating a new Acme Umbraco site",
+  "identity": "Acme.Umbraco.Starter",
+  "shortName": "acmestarter",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "AcmeStarter",
+  "preferNameDirectory": true,
+  "guids": [
+    "fceeb9ca-162a-424a-9939-c574bdb0dacf"
+  ],
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [
+            "umbraco/Logs/**",
+            "umbraco/Data/**"
+          ]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "httpPort": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "fallback": 5000
+      },
+      "replaces": "21988"
+    },
+    "httpsPort": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 44300,
+        "high": 44399,
+        "fallback": 5001
+      },
+      "replaces": "44377"
+    },
+    "connectionString": {
+      "displayName": "Connection string",
+      "description": "Database connection string used by Umbraco.",
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "",
+      "replaces": "Data Source=|DataDirectory|/Umbraco.sqlite.db;Cache=Shared;Foreign Keys=True;Pooling=True"
+    },
+    "connectionStringProviderName": {
+      "displayName": "Connection string provider name",
+      "description": "Database connection string provider name used by Umbraco.",
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "Microsoft.Data.SqlClient",
+      "replaces": "Microsoft.Data.Sqlite"
+    },
+    "skipRestore": {
+      "displayName": "Skip restore",
+      "description": "If specified, skips the automatic restore of the project on create.",
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
+    },
+    "friendlySiteNameGenerated": {
+      "type": "derived",
+      "valueSource": "name",
+      "replaces": "FriendlySiteName",
+      "valueTransform": "pascalCaseToSpaces"
+    },
+    "deliveryApi": {
+      "displayName": "Enable delivery API",
+      "description": "If specified, the Delivery API will be enabled (in startup.cs and appSettings.json)",
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "AcmeStarter.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "condition": "(!skipRestore)",
+      "description": "Restore NuGet packages required by this project",
+      "manualInstructions": [ { "text": "Run 'dotnet restore'" } ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    },
+    {
+      "description": "Add uSync ExportOnSave setting",
+      "actionId": "695A3659-EB40-4FF5-A6A6-C9C4E629FCB0",
+      "args": {
+        "jsonFileName": ".\\appSettings.json",
+        "parentPropertyPath": "uSync:Settings",
+        "newJsonPropertyName": "ExportOnSave",
+        "newJsonPropertyValue": "Settings"
+      },
+      "continueOnError": true
+    }
+  ],
+  "forms": {
+    "pascalCaseToSpaces": {
+      "identifier": "replace",
+      "pattern": "([A-Z][a-z]+)",
+      "replacement": "$1 "
+    }
+  }
+}
